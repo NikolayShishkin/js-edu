@@ -9,6 +9,10 @@ module.exports = function getTimeForEducation(
     knowsProgramming = true,
     config = {family: 4}
     ) {
-      return 0;
+      const DEFAULT_WEEKS = 800;
+      let knowledgeDeficit = knowsProgramming ? 0 : 500;
+      let weeks = (DEFAULT_WEEKS + knowledgeDeficit) / config[focus] ;
+  
+      return Math.ceil(weeks);
   };
   
